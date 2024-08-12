@@ -184,7 +184,7 @@ Library for adding snapping to a d3 [brush](https://github.com/d3/d3-brush).
                 const initialSelection = [x(brushStart), x(brushEnd)];
                 brushContainer.call(brush.move, initialSelection);
 
-                // add linear snapping to brush
+                // add time snapping to brush
                 window.d3BrushSnapping.addTimeSnappingToBrush(brush, brushContainer, {
                     timeScale: x,
                     numTicks: 24,
@@ -293,7 +293,7 @@ Library for adding snapping to a d3 [brush](https://github.com/d3/d3-brush).
                     previousResult.values = snappedResult.values;
                 };
 
-                // add linear snapping to brush
+                // add time snapping to brush
                 window.d3BrushSnapping.addTimeSnappingToBrush(brush, brushContainer, {
                     timeScale: x,
                     numTicks: 24,
@@ -308,7 +308,7 @@ Library for adding snapping to a d3 [brush](https://github.com/d3/d3-brush).
                 const initialText = humanizeDuration(Math.abs(previousResult.values[1] - previousResult.values[0]), { units: ["w", "d", "h", "m", "s", "ms"], round: true });
 
                 const tooltipId = "#tooltip";
-                // add tooltip to the brush
+                // add tooltip to the brush to view time duration
                 window.d3BrushTooltip.addTooltipToBrush(tooltipId, brush, brushContainer, ({ selection }) => {
                     let humanReadableDuration = null;
                     if (selection[0] === selection[1]) {
