@@ -311,8 +311,10 @@ Library for adding snapping to a d3 [brush](https://github.com/d3/d3-brush).
                 // add tooltip to the brush to view time duration
                 window.d3BrushTooltip.addTooltipToBrush(tooltipId, brush, brushContainer, ({ selection }) => {
                     let humanReadableDuration = null;
-                    if (selection[0] === selection[1]) {
-                        humanReadableDuration = "0 milliseconds";
+                    if (!selection) {
+                        humanReadableDuration = initialText;
+                    } else if (selection[0] === selection[1]) {
+                        humanReadableDuration = null;
                     } else if (previousResult != null) {
                         humanReadableDuration = humanizeDuration(Math.abs(previousResult.values[1] - previousResult.values[0]), { units: ["w", "d", "h", "m", "s", "ms"], round: true });
                     }
