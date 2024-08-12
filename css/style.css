@@ -1,0 +1,13 @@
+.tooltip-default {
+    opacity: 1;
+    background-color: white;
+    border: solid 1px black;
+    padding: 4px;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    display: none;
+    z-index: 2;
+    user-select: none;
+    position: fixed;
+}
